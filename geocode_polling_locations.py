@@ -30,12 +30,12 @@ with open('polling_locations_2011.json','r') as in_f:
                     geoOutput["properties"] = georeader[index]
                     geoJSONArray.append(geoOutput)
 
-                    count_f.write("Last index," + str(index)+ ",Failues," + str(errors))
+                    count_f.write("Last index," + str(index)+ ",Failues," + str(errors)+ "\n" )
                     index += 1
                 except Exception as e:
                     errors.append(index)
-                    count_f.write("Last index," + str(index)+ ",Failues," + str(errors))
+                    count_f.write("Last index," + str(index)+ ",Failues," + str(errors)+ "\n")
                     index += 1
 
-                    print "Failure. " + str(e) + "index is set to: " + str(index)
+                    print "Failure. " + str(e) + "index is set to: " + str(index) + "\n"
             json.dump(geoJSONArray, out_f)
