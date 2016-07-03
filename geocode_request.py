@@ -17,7 +17,7 @@ def removeWhiteSpacesAndQuotes(element):
 def googleRequest(addressArr):
     apikey1 = "&key=AIzaSyCNtzDEyqEfwGPFiK_ZHfMmAndsFZNzxbw"
     baseURL = "https://maps.googleapis.com/maps/api/geocode/json?address="
-    address = addressArr[0][1:-1].replace(" ","%20")
+    address = addressArr[0][1:-1].replace(" ","%20").lower
     index = 1
 
     while index < len(addressArr):
